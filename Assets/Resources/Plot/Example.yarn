@@ -37,7 +37,7 @@ title: askStas
     -> Нет.
         <<character 1 "">>
         Катя: Пидора ответ.
-        <<set $stas = true>>
+        <<set $stas = false>>
         <<jump discordMeeting>>
 ===
 
