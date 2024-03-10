@@ -6,16 +6,7 @@ env:
   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
 
 jobs:
-  checkLicense:
-    name: Check for the Unity license ☑️
-    runs-on: ubuntu-latest
-    steps:
-      - name: Fail - No license ☠️
-        if: ${{ !startsWith(env.UNITY_LICENSE, '<') }}
-        run: exit 1
-
   testRunner:
-    needs: checkLicense
     name: Test all modes 📝
     runs-on: ubuntu-latest
     steps:
@@ -92,7 +83,7 @@ jobs:
             Library-build-
             Library-
 
-      - uses: webbertakken/unity-builder@v2
+      - uses: webbertakken/unity-builder@v4.2.1
         with:
           targetPlatform: WebGL
 
