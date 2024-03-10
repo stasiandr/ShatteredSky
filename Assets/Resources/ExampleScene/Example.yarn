@@ -1,6 +1,7 @@
 ﻿title: Start
 
 ---
+<<background "Backgrounds/Discord">>
 Катя: Я хочу сделать игру!
 Катя: Но для этого мне нужна команда. Пойду спрошу Никиту!
 <<jump askNikita>>
@@ -35,6 +36,7 @@ title: askStas
 
 title: discordMeeting
 ---
+<<background "Backgrounds/Conversation">>
 Катя: Итак, кто у нас в команде?
     -> Катя.
         Катя: Она художница.
@@ -51,6 +53,7 @@ title: discordMeeting
 
 title: Ending
 ---
+<<background "Backgrounds/Work">>
 Рассказчик: Команда работала днями и ночами...
 Рассказчик: И днями...
 Рассказчик: И ночами...
