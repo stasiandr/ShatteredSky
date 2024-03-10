@@ -1,4 +1,7 @@
+using System;
+using System.Collections;
 using System.Linq;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,14 +17,25 @@ namespace Scene
 
         [SerializeField]
         private Position pos;
-        
+
+        private void Start()
+        {
+            GetComponent<Image>().color = Color.clear;
+        }
+
         private static Character Instance(Position pos) => FindObjectsOfType<Character>().First(c => c.pos == pos);
         
-        public static void SetCharacter(string path, Position pos)
+        public static IEnumerator SetCharacter(string path, Position pos)
         {
-            var instance = Instance(pos);
-            instance.gameObject.GetComponent<Image>().sprite = string.IsNullOrEmpty(path) ? null : Resources.Load<Sprite>(path);
-            instance.gameObject.GetComponent<Image>().color = string.IsNullOrEmpty(path) ? Color.clear : Color.white;
+            var imageComponent = Instance(pos).gameObject.GetComponent<Image>();
+
+            if (imageComponent.sprite != null)
+                yield return imageComponent.DOColor(new Color(1, 1, 1, 0), 0.5f);
+            
+            imageComponent.sprite = string.IsNullOrEmpty(path) ? null : Resources.Load<Sprite>(path);
+            
+            if (imageComponent.sprite != null)
+                yield return imageComponent.DOColor(Color.white, 0.5f);
         }
     }
 }
