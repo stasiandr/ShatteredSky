@@ -1,6 +1,6 @@
 ﻿title: Start
 ---
-<<jump wakeUp>>
+<<jump rings>>
 ===
 
 title: wakeUp
@@ -538,6 +538,7 @@ title: home
 <<else>>
     <<jump homeNonBoarded>>
 <<endif>>
+===
 
 title: homeNonBoarded
 ---
