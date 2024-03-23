@@ -5,7 +5,8 @@ Thumbs.db
 # GIT
 .gitconfig
 
-# IDE directories
+# IDE stuff
+.vsconfig
 .vs/
 .vscode/
 .idea/
